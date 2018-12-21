@@ -1,0 +1,11 @@
+
+
+<%= form_with model: @todo do |f| %>
+  <%= f.text_field :subject %>
+  <%= f.text_area :description %>
+  <%= f.check_box :is_completed %>
+  <%= f.submit%>
+<% end %>
+
+<%= link_to 'Cancel', :back %>
+

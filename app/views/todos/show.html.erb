@@ -1,0 +1,4 @@
+<h1><%= @todo.is_completed ? 'done': 'not yet'%> : <%= @todo.subject %></h1>
+<p><%= @todo.description %></p>
+
+<%= link_to 'Back to Home', todos_path %>
