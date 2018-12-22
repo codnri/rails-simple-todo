@@ -1,11 +1,11 @@
 <h1>index page</h1>
 <div><%= link_to 'New Todo', new_todo_path %></div>
-
+<br/>
 <% unless @todos.empty? %>
   <div>
     <% @todos.each do |t|%>
       <div>
-        <%= t.subject %>
+        <%= link_to t.subject, todo_path(t) %>
       </div>
     <% end %>
   </div>

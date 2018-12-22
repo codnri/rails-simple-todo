@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  devise_for :users
   # get 'todos/new'
 
   root "todos#index"

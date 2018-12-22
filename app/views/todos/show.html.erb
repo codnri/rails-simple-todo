@@ -1,4 +1,8 @@
 <h1><%= @todo.is_completed ? 'done': 'not yet'%> : <%= @todo.subject %></h1>
 <p><%= @todo.description %></p>
 
+test: <%= @todo.user_id unless @todo.user_id.blank?  %>
+
+<%= link_to 'Edit', edit_todo_path(@todo) %>
+<%= link_to 'Delete', todo_path(@todo), method: :delete, data: { confirm: "Are you sure?"} %>
 <%= link_to 'Back to Home', todos_path %>
