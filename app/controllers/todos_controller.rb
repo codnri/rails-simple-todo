@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
   
   before_action :set_current_user_todo, only: [ :edit, :update, :destroy]
-  # before_action :set_current_user_todo, only: [ :edit, :update]
+
 
   def index
     @todos = Todo.all
@@ -45,7 +45,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    # @todo = Todo.find(params[:id]) #後で消す
+    
 
     @todo.destroy
     flash.notice= "Todo has been deleted"
@@ -59,16 +59,7 @@ class TodosController < ApplicationController
     end
 
     def set_current_user_todo
-      print('★★★★★')
-      print(current_user.email)
-      print(params[:id])
       @todo = current_user.todos.find(params[:id])
     end
 end
 
-
-# def task_params
-#   params.require(:task).permit(
-#     :title,:description,:done,:registration_date,
-#     :first_reminder_date,:second_reminder_date,:third_reminder_date,:subject_id,:first_check,:second_check,:third_check)
-# end
